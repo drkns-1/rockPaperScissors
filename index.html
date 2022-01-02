@@ -4,14 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../rockPaperScissors/script.js"></script>
     <title>Document</title>
+    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
-    <div class="score"> 
-
+    <div>
+        <h1 class="heading">Welcome to rock paper scissors</h1>
+        <h2 class="headingSub">Right, here's the rules. You select: Rock, paper or scissors. Then we will print the outcome of the round below.</h2>
+        <div class="userChoices">
+        
+            <div class="choiceRock">
+                <button class="button" data-selection="rock">✊</button>
+                <p class="label">Rock</p>
+            </div>
+            <div class="choicePaper">
+                <button class="button" data-selection="paper">👋</button>
+                <p class="label">Paper</p>
+            </div>
+            <div class="choiceRock">
+                <button class="button" data-selection="scissors">✌️</button>
+                <p class="label">Scissors</p>
+            </div>
+        </div>
+        <div class="roundOutcomes">
+        <h3 class="headingSub">Round <span id="roundCount"></span> outcome</h3>
+            <p id="userOutcome"></p>
+            <p id="cpuOutcome"></p>
+        </div>
+        <h2 class="headingSub">Scores!</h2>
+        <div class="scores">
+            <div class="counter">User <span id="userPoints">0</span></div>
+            <div class="counter">Computer <span id="cpuPoints">0</span></div>
+        </div>
     </div>
 
-    
+
+
 </body>
 </html>

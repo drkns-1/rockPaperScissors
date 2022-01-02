@@ -1,67 +1,81 @@
+const userSelection = document.querySelectorAll('[data-selection]'); 
+
+let cpuScore = 1; 
+let userScore = 1;
+let roundCounter = 1;
 
 
-let cpuScore = 0; 
-let userScore = 0; 
+userSelection.forEach(selectionButton => {
+    selectionButton.addEventListener('click', e => {
+        const selectionName = selectionButton.dataset.selection
+        makeSelection(selectionName)
+    })
+})
 
-function rockPaperScissors(){
 
-// Computer makes their choice 
-let options = ['rock', 'paper', 'scissors']; 
-let computerChoice = options[Math.floor(Math.random()*options.length)];
+function cpuSelection() {
+    let options = ['rock', 'paper', 'scissors']; 
+    let computerChoice = options[Math.floor(Math.random()*options.length)];
+    return computerChoice; 
+    
+}
 
-// Prompts Player to enter value
-let playerInput = prompt('Rock, paper, scissors?');
+function makeSelection(selection) {
 
-// Converts value to lower case 
-let playerChoice = playerInput.toLowerCase(); 
+    const cpuChoice = cpuSelection();
+    userOutcome.style.opacity = '100%';
 
-function game(){
-    if (playerChoice === computerChoice){
-        (console.log("It's a tie, play again!"));
+    if (selection === cpuChoice) {
+        console.log("It's a tie!");
+        document.getElementById("userOutcome").innerText = selection;
+        document.getElementById("cpuOutcome").innerText = cpuChoice;
+        document.getElementById("roundCount").innerText = roundCounter;
+        userOutcome.style.opacity = '50%';
+        cpuOutcome.style.opacity = '50%';
+        roundCounter++;
+        
+    } else if ((selection === 'rock') && (cpuChoice === 'scissors')){
+        console.log('You win!');
+        document.getElementById("userPoints").innerHTML = userScore;
+        document.getElementById("userOutcome").innerText = selection;
+        document.getElementById("cpuOutcome").innerText = cpuChoice;
+        document.getElementById("roundCount").innerText = roundCounter;
+        cpuOutcome.style.opacity = '50%';
+        userScore++;
+        roundCounter++;
+
+    } else if ((selection === 'paper') && (cpuChoice === 'rock')){
+        console.log('You win!');
+        document.getElementById("userPoints").innerHTML = userScore;
+        document.getElementById("userOutcome").innerText = selection;
+        document.getElementById("cpuOutcome").innerText = cpuChoice;
+        document.getElementById("roundCount").innerText = roundCounter;
+        cpuOutcome.style.opacity = '50%';
+        userScore++;
+        roundCounter++;
+
+    } else if ((selection === 'scissors') && (cpuChoice === 'paper')){
+        console.log('You win!');
+        document.getElementById("userPoints").innerHTML = userScore;
+        document.getElementById("userOutcome").innerText = selection;
+        document.getElementById("cpuOutcome").innerText = cpuChoice;
+        document.getElementById("roundCount").innerText = roundCounter;
+        cpuOutcome.style.opacity = '50%';
+        userScore++;
+        roundCounter++;
+
+    } else {
+        console.log('You lose!');
+        document.getElementById("cpuPoints").innerHTML = cpuScore;
+        document.getElementById("userOutcome").innerText = selection;
+        document.getElementById("cpuOutcome").innerText = cpuChoice;
+        document.getElementById("roundCount").innerText = roundCounter;
+        userOutcome.style.opacity = '50%';
+        cpuOutcome.style.opacity = '100%'; 
+        cpuScore ++;
+        roundCounter++;
+
     }
-    else if ((playerChoice === 'rock') && (computerChoice === 'scissors')){
-        userScore++; 
-        (console.log('You win!'));
-    }
-    else if ((playerChoice === 'scissors') && (computerChoice === 'paper')){
-        userScore++; 
-        (console.log('You win!'));
-    }
-    else if ((playerChoice === 'paper') && (computerChoice === 'rock')){
-        userScore++; 
-        (console.log('You win!'));
-    }
-    else{
-        (console.log('You lose!')); 
-        cpuScore++; 
-    }    
-}
-
-
-if (playerChoice === 'rock') {
-    game()
-}
-else if (playerChoice === 'paper'){
-    game(); 
-}
-else if (playerChoice === 'scissors'){
-    game(); 
-}
-else {
-console.log('Wrong input, please try again!') 
-}
-
-
-
-
-console.log("Computer Score:", cpuScore);
-console.log("User Score:", userScore);
-console.log('Your choice:', playerChoice); 
-console.log('Computer choice:', computerChoice);
-console.log('----------------end of round----------------'); 
 
 }
 
-for (let i = 0; i < 5; i++){
-    rockPaperScissors();
-}

@@ -1,0 +1,105 @@
+body {
+    font-family: 'Lato', sans-serif;
+    color: #1E2D2F;
+    background-color: #F6F6F4; 
+    font-size: 1rem;
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+.heading {
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 32px;
+}
+
+.headingSub {
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+
+}
+
+
+.userChoices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 52px;
+
+}
+
+.choicePaper, .choiceRock, .choiceScissors {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.label {
+    font-size: .75rem;
+    margin: 0 auto;
+    padding-top: 10px;
+    font-weight: 700;
+}
+
+button {
+    border: none;
+    background-color: none;
+    color: none;
+    margin: 0 auto;
+    padding: 16px; 
+    width: 100%;
+    display: block;
+    font-size: 4rem;
+    border-radius: 16px;
+    transition: 500ms;
+}
+
+
+button:hover {
+    background-color: #CDCBCB;
+    transform: scale(1.05, 1.05);     
+}
+
+button:active {
+    background-color: #363535;
+    box-shadow: 0px 0px 10px #8F0C00;
+    transition: none;
+}
+
+.scores {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.counter {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 0px 32px 0 32px;
+}
+
+.counter span {
+    font-size: 2rem;
+}
+
+.roundOutcomes {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    gap: 40px;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+}
+
+.loser {
+    opacity: 50%;
+    font-weight: 400;
+}
+
+.scoringContainer {
+    display: flex;
+}
