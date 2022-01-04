@@ -26,7 +26,6 @@ function makeSelection(selection) {
     userOutcome.style.opacity = '100%';
 
     if (selection === cpuChoice) {
-        console.log("It's a tie!");
         document.getElementById("userOutcome").innerText = selection;
         document.getElementById("cpuOutcome").innerText = cpuChoice;
         document.getElementById("roundCount").innerText = roundCounter;
@@ -35,7 +34,6 @@ function makeSelection(selection) {
         roundCounter++;
         
     } else if ((selection === 'rock') && (cpuChoice === 'scissors')){
-        console.log('You win!');
         document.getElementById("userPoints").innerHTML = userScore;
         document.getElementById("userOutcome").innerText = selection;
         document.getElementById("cpuOutcome").innerText = cpuChoice;
@@ -45,7 +43,6 @@ function makeSelection(selection) {
         roundCounter++;
 
     } else if ((selection === 'paper') && (cpuChoice === 'rock')){
-        console.log('You win!');
         document.getElementById("userPoints").innerHTML = userScore;
         document.getElementById("userOutcome").innerText = selection;
         document.getElementById("cpuOutcome").innerText = cpuChoice;
@@ -55,7 +52,6 @@ function makeSelection(selection) {
         roundCounter++;
 
     } else if ((selection === 'scissors') && (cpuChoice === 'paper')){
-        console.log('You win!');
         document.getElementById("userPoints").innerHTML = userScore;
         document.getElementById("userOutcome").innerText = selection;
         document.getElementById("cpuOutcome").innerText = cpuChoice;
@@ -65,7 +61,6 @@ function makeSelection(selection) {
         roundCounter++;
 
     } else {
-        console.log('You lose!');
         document.getElementById("cpuPoints").innerHTML = cpuScore;
         document.getElementById("userOutcome").innerText = selection;
         document.getElementById("cpuOutcome").innerText = cpuChoice;
